@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the amazing world of books and their benefits. Explore our curated list of recommended books.">
+    <meta name="author" content="BookWorld">
+    <title>Vahmahala BookWorld - Why Books Matter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #4CAF50, #81C784);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #333;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header nav {
+            display: flex;
+            justify-content: space-around;
+        }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+        header nav a:hover {
+            background: #4CAF50;
+            border-radius: 5px;
+        }
+        .container {
+            flex: 1;
+            max-width: 800px;
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script>
+        let countdown = 60; // Countdown in seconds
+        const redirect = () => {
+            const countdownEl = document.getElementById('countdown');
+            if (countdown > 0) {
+                countdownEl.textContent = countdown;
+                countdown--;
+            } else {
+                window.location.href = 'books.html';
+            }
+        };
+        setInterval(redirect, 1000);
+
+        const dynamicMessages = [
+            "Books hold the key to unlocking worlds unknown, igniting imaginations, and enriching lives.",
+            "A reader today, a leader tomorrow! Discover how books can change your perspective.",
+            "Each book is a new journey. Start your adventure now!",
+            "Knowledge is power, and books are the ultimate tool.",
+            "Dive into the magic of stories and the wisdom of knowledge.",
+        ];
+
+        let currentMessageIndex = 0;
+        const messageElement = document.getElementById('dynamic-message');
+
+        const changeMessage = () => {
+            currentMessageIndex = (currentMessageIndex + 1) % dynamicMessages.length;
+            messageElement.textContent = dynamicMessages[currentMessageIndex];
+        };
+
+        setInterval(changeMessage, 4000); // Change message every 4 seconds
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Welcome to Vamahala BookWorld</h1>
+        <p id="dynamic-message">Books hold the key to unlocking worlds unknown, igniting imaginations, and enriching lives.</p>
+        <p>don't worry the book you are looking for will be right here in <span id="countdown" class="countdown">5</span> seconds...</p>
+    </div>
+    <footer>&copy; 2025 vamahala BookWorld. All rights reserved.</footer>
+</body>
+</html>
+
+
+
