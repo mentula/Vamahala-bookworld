@@ -1,5 +1,3 @@
-
-<!-- books.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,54 +8,85 @@
     <link href="assets/css/book.css" rel="stylesheet">
     <title>BookWorld - Recommended Books</title>
     <style>
-       
+        
     </style>
 </head>
 <body>
     <header>
         <h1>Our Favorite Books</h1>
     </header>
-    <div class="container">
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search books by name...">
+    </div>
+    <div class="container" id="book-list">
         <div class="book">
-            <a href=" https://uploady.io/nem5bw2le9ed" target="_blank">Eat That Frog! 21 Great Ways to Stop Procrastinating and Get More Done in Less Time </a>
-        </div>
-        <div class="book">
-            <a href="https://uploady.io/sc00llkibdoq" target="_blank">Zero to One_ Notes on Startups, or How to Build the Future</a>
-        </div>
-        <div class="book">
-            <a href="https://uploady.io/luh7e5d03ahf" target="_blank">The law of human nature Book by Robert Greene</a>
+            <a href="https://uploady.io/nem5bw2le9ed" target="_blank">Eat That Frog! 21 Great Ways to Stop Procrastinating and Get More Done in Less Time</a>
         </div>
         <div class="book">
-            <a href="https://uploady.io/lykay6h9yirx" target="_blank">Predictably Irrational_ The Hidden Forces That Shape Our Decisions</a>
+            <a href="https://uploady.io/sc00llkibdoq" target="_blank">Zero to One: Notes on Startups, or How to Build the Future</a>
         </div>
         <div class="book">
-            <a href="https://uploady.io/2rlq0ie91ja0" target="_blank">Ikigai _ the Japanese secret to a long and happy life</a>
+            <a href="https://uploady.io/luh7e5d03ahf" target="_blank">The Law of Human Nature by Robert Greene</a>
         </div>
-   <div class="book">
-            <a href="https://uploady.io/2hy8gve0mcic" target="_blank">How To Win Friends and Influence People</a>
+        <div class="book">
+            <a href="https://uploady.io/lykay6h9yirx" target="_blank">Predictably Irrational: The Hidden Forces That Shape Our Decisions</a>
         </div>
-
-   <div class="book">
-            <a href="https://uploady.io/tld69jjl752n" target="_blank">The Total Money Makeover_ A Proven Plan for Financial Fitness, Revised 3rd Edition</a>
+        <div class="book">
+            <a href="https://uploady.io/2rlq0ie91ja0" target="_blank">Ikigai: The Japanese Secret to a Long and Happy Life</a>
         </div>
-
-<div class="book">
+        <div class="book">
+            <a href="https://uploady.io/2hy8gve0mcic" target="_blank">How to Win Friends and Influence People</a>
+        </div>
+        <div class="book">
+            <a href="https://uploady.io/tld69jjl752n" target="_blank">The Total Money Makeover: A Proven Plan for Financial Fitness</a>
+        </div>
+        <div class="book">
             <a href="https://uploady.io/2jsye61r39ak" target="_blank">Mastery</a>
         </div>
-
-<div class="book">
-            <a href="https://uploady.io/gv7051hcgp35" target="_blank">Steal Like an
-Artist</a>
+        <div class="book">
+            <a href="https://uploady.io/gv7051hcgp35" target="_blank">Steal Like an Artist</a>
         </div>
-
-<div class="book">
-            <a href="https://uploady.io/00hwc2p2s3sr" target="_blank">Men Are from Mars, Women Are from Venus </a>
+        <div class="book">
+            <a href="https://uploady.io/00hwc2p2s3sr" target="_blank">Men Are from Mars, Women Are from Venus</a>
         </div>
-
-
-
-
     </div>
+
     <footer>&copy; 2025 Vamahala BookWorld. All rights reserved. TechZED</footer>
+
+    <!-- Popup -->
+    <div id="overlay"></div>
+    <div id="request-popup">
+        <p>Would you like to request a specific book for free?</p>
+        <button class="yes-btn" onclick="window.location.href='https://taplink.cc/techzed';">Yes</button>
+        <button class="no-btn" onclick="closePopup();">No</button>
+    </div>
+
+    <script>
+        // Search Functionality
+        const searchBar = document.getElementById('search-bar');
+        const bookList = document.getElementById('book-list');
+        const books = bookList.getElementsByClassName('book');
+
+        searchBar.addEventListener('input', (e) => {
+            const searchText = e.target.value.toLowerCase();
+            Array.from(books).forEach((book) => {
+                const text = book.textContent.toLowerCase();
+                book.style.display = text.includes(searchText) ? '' : 'none';
+            });
+        });
+
+        // Popup
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'block';
+                document.getElementById('request-popup').style.display = 'block';
+            }, 2000);
+        };
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('request-popup').style.display = 'none';
+        }
+    </script>
 </body>
-</html>
+    </html>
