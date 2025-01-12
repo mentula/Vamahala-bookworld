@@ -135,7 +135,7 @@ $amazonProducts = json_decode(file_get_contents($amazonProductsFile), true);
                 countdownEl.textContent = countdown;
                 countdown--;
             } else {
-                window.location.href = 'books.php';
+                window.location.href = 'books.html';
             }
         };
         setInterval(redirect, 1000);
