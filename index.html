@@ -15,7 +15,7 @@ $amazonProductsFile = 'amazon_products.json';
 // Fetch and decode the JSON data
 $amazonProducts = json_decode(file_get_contents($amazonProductsFile), true);
 ?>
-fetch('https://dash.infinityfree.com/accounts/if0_37967377/domains/ntula.great-site.net/index.php', {
+fetch('https://ntula.great-site.net/index.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: 'Netlify User' })
