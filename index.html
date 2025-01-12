@@ -5,7 +5,13 @@ $amazonProductsFile = 'amazon_products.json';
 // Fetch and decode the JSON data
 $amazonProducts = json_decode(file_get_contents($amazonProductsFile), true);
 ?>
-
+fetch('https://if0_37967377.com/Vamahala-bookworld/index.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'Netlify User' })
+})
+.then(response => response.json())
+.then(data => console.log(data));
 <!DOCTYPE html>
 <html lang="en">
 <head>
